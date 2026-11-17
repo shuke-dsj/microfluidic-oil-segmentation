@@ -29,6 +29,12 @@ flowchart LR
   E --> F[面积统计 / 桌面分析 / 报告]
 ```
 
+### 模型架构
+
+![Attention ResUNet 模型架构](docs/assets/model-architecture.png)
+
+模型以 ResNet18 提取多尺度特征，解码时利用三个 Attention Gate 过滤跳跃连接，并输出六类像素标签。图中输入缩略图仅作示意；实际模型输入为预处理后的三色结构图，具体通道与尺寸以 [模型实现](src/oilseg/model.py) 为准。
+
 ## 已完成的工作
 
 - **数据流程**：清洗和整理图像/标签；颜色距离阈值预处理；RGB 标签到类别索引的转换；512×512 随机裁剪、同步翻转和颜色抖动。
@@ -49,13 +55,29 @@ flowchart LR
 
 验证指标与测试指标分开呈现。当前没有同配置重训练消融；不宣称相对 U-Net 的提升幅度。更完整的指标口径、局限和原始数值见 [实验结果](docs/RESULTS.md) 与 [复核 JSON](reports/reproduced/evaluation.json)。
 
-## 展示：合成输入与桌面应用
+## 识别结果与桌面应用
+
+![实验样例的输入结构图与预测结果](docs/assets/segmentation-result.png)
+
+左侧为预处理后的输入结构图，右侧为六类预测结果。不同颜色表示不同区域类别；这是单张样例，整体指标见上表。
+
+![桌面软件识别结果](docs/assets/desktop-result.png)
+
+桌面端整合模型导入、分割可视化、类别占比和报告输出。截图中的数值对应该次单图分析，不能直接作为测试集平均结果。
+
+### Attention Gate 可视化
+
+![Attention Gate 与解码器响应](docs/assets/attention-gate.png)
+
+左图为 att2 空间门控系数 α，右图为同层解码器特征的平均绝对激活；白色轮廓表示壁面剩余油区域。该图是按目标区域对比度选择的展示样本，不代表随机样本或整体平均；α 也不是油类概率。多图统计和分析边界见 [实验结果](docs/RESULTS.md)。
+
+### 合成输入
 
 下图为**几何规则生成的合成输入**，只演示输入格式与运行链路，不含实验图像，也不用于精度评测。
 
 ![Synthetic input: white rock, gray pore and red oil](examples/synthetic_input.png)
 
-桌面端展示见 [使用说明](docs/USAGE.md)。实验图像、标签和含实验图像的结果图不公开；模型权重通过 Release 提供。
+桌面端操作见 [使用说明](docs/USAGE.md)。上面的展示图由项目负责人明确提供用于公开展示；完整实验数据和标签不公开，模型权重通过 Release 提供。
 
 ## 快速开始
 

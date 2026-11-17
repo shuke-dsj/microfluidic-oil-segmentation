@@ -11,6 +11,10 @@
 
 ## 模型结构
 
+![Attention ResUNet 结构示意](assets/model-architecture.png)
+
+图中输入缩略图为示意；实际输入是规则预处理后的三色结构图。具体通道与尺寸以代码为准。
+
 ```mermaid
 flowchart LR
   X[RGB 结构图] --> E[ResNet18 编码器]

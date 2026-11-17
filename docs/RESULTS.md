@@ -35,6 +35,10 @@
 
 ## Attention Gate 诊断
 
+![att2 门控系数与解码器响应](assets/attention-gate.png)
+
+该图展示按壁面油区域 α 对比度选择的单张样本：白色轮廓为壁面油区域，左侧为 att2 空间门控系数，右侧为解码器平均绝对激活。该样本的对比不代表所有测试图的平均表现，也不能作为正式消融实验。
+
 历史分析使用 `att4`、`att3`、`att2` 的 α 图、skip 特征平均绝对能量和 10 图数值统计：
 
 | Gate | mean α(oil) | mean α(non-oil) | top-10% oil enrichment |
