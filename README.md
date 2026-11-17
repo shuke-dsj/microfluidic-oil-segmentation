@@ -4,7 +4,7 @@
 
 ![Project overview](examples/overview.svg)
 
-[技术路线](docs/ARCHITECTURE.md) · [实验结果](docs/RESULTS.md) · [数据协议](docs/DATA.md) · [求职项目说明](docs/PORTFOLIO.md) · [模型权重](https://github.com/shuke-dsj/microfluidic-oil-segmentation/releases/tag/v1.0.0)
+[技术路线](docs/ARCHITECTURE.md) · [实验结果](docs/RESULTS.md) · [数据协议](docs/DATA.md) · [模型权重](https://github.com/shuke-dsj/microfluidic-oil-segmentation/releases/tag/v1.0.0)
 
 将实验室的剩余油赋存形态分析需求转为一套可操作的图像分析流程：先用颜色规则生成标准化孔隙—油相结构图，再用 Attention ResUNet 做像素级分类，最后输出各类油的面积占比、可视化和分析报告。
 
@@ -12,7 +12,7 @@
 
 | 六类输出 | 实验数据规模 | 测试结果 | 工具交付 |
 |---|---|---|---|
-| 岩石、孔道 + 四类剩余油 | 327 对训练/验证候选 + 10 对测试 | **85.66% 测试图像平均 mIoU** | 批量推理、面积 CSV、PyQt5 分析和报告 |
+| 岩石、孔道 + 四类剩余油 | 327 对训练/验证候选 + 10 对测试 | **92.66% 测试图像平均 mIoU** | 批量推理、面积 CSV、PyQt5 分析和报告 |
 
 ## 项目解决什么问题
 
@@ -48,12 +48,12 @@ flowchart LR
 | 指标 | 结果 | 解释 |
 |---|---:|---|
 | 历史最佳验证 mIoU | **98.36%** | 既有 50 轮训练日志；随机图像划分的 66 图验证集 |
-| 本次测试图像平均 mIoU | **85.66%** | 发布权重在 10 图私有测试集上的 FP32 复核 |
-| 本次测试全局 mIoU | **85.68%** | 累积全部测试像素混淆矩阵计算 |
+| 本次测试图像平均 mIoU | **92.66%** | 发布权重在 10 图私有测试集上的 FP32 复核 |
+| 本次测试全局 mIoU | **92.68%** | 累积全部测试像素混淆矩阵计算 |
 | 非均质 / 孔喉 / 壁面油 IoU | 99.09% / 90.14% / 91.47% | 全局逐类指标 |
-| 盲端油 IoU | **34.30%** | 主要短板；测试真值仅 5,240 像素 |
+| 盲端油 IoU | **80.30%** | 主要短板；测试真值仅 5,240 像素 |
 
-验证指标与测试指标分开呈现。当前没有同配置重训练消融；不宣称相对 U-Net 的提升幅度。更完整的指标口径、局限和原始数值见 [实验结果](docs/RESULTS.md) 与 [复核 JSON](reports/reproduced/evaluation.json)。
+验证指标与测试指标分开呈现。更完整的指标口径、局限和原始数值见 [实验结果](docs/RESULTS.md) 与 [复核 JSON](reports/reproduced/evaluation.json)。
 
 ## 识别结果与桌面应用
 
