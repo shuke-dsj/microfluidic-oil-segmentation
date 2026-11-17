@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="440" viewBox="0 0 1200 440">
+<rect width="1200" height="440" rx="18" fill="#0c1b2b"/>
+<circle cx="1110" cy="20" r="260" fill="#103844" opacity=".6"/>
+<g font-family="Segoe UI,Arial,sans-serif">
+<text x="54" y="65" font-size="14" letter-spacing="3" fill="#63d5c5">COMPUTER VISION / APPLIED RESEARCH</text>
+<text x="54" y="130" font-size="44" font-weight="700" fill="#fff">Microfluidic Oil</text>
+<text x="54" y="184" font-size="44" font-weight="700" fill="#fff">Segmentation</text>
+<text x="56" y="225" font-size="18" fill="#b6c9d8">From structural images to pixel-level analysis.</text>
+<rect x="54" y="258" width="166" height="34" rx="17" fill="#173d48"/>
+<text x="75" y="281" font-size="14" fill="#8ce5d5">Attention ResUNet</text>
+<rect x="232" y="258" width="110" height="34" rx="17" fill="#1b3247"/>
+<text x="254" y="281" font-size="14" fill="#ccdae6">PyTorch</text>
+<rect x="354" y="258" width="107" height="34" rx="17" fill="#1b3247"/>
+<text x="376" y="281" font-size="14" fill="#ccdae6">Desktop</text>
+<text x="56" y="361" font-size="32" font-weight="700" fill="#fff">6 classes</text>
+<text x="56" y="389" font-size="13" fill="#89a6bc">PIXEL-LEVEL OUTPUT</text>
+<text x="258" y="361" font-size="32" font-weight="700" fill="#63d5c5">85.66%</text>
+<text x="258" y="389" font-size="13" fill="#89a6bc">TEST IMAGE-MEAN mIoU / N=10</text>
+<rect x="630" y="63" width="516" height="311" rx="14" fill="#142c3d" stroke="#284559"/>
+<text x="660" y="98" font-size="12" letter-spacing="2" fill="#7b9bb1">THE PIPELINE</text>
+<g font-size="17" fill="#e8f0f5">
+<text x="695" y="148">Rule-based preprocessing</text>
+<text x="695" y="211">ResNet18 + attention gates</text>
+<text x="695" y="274">Six-class segmentation</text>
+<text x="695" y="337">Area statistics + reports</text>
+</g>
+<g fill="#63d5c5"><circle cx="669" cy="142" r="6"/><circle cx="669" cy="205" r="6"/><circle cx="669" cy="268" r="6"/><circle cx="669" cy="331" r="6"/></g>
+<path d="M669 151V196 M669 214V259 M669 277V322" stroke="#3c6976" stroke-width="2"/>
+<text x="1145" y="408" text-anchor="end" font-size="12" fill="#7493a8">Private experimental data · Public source and weights</text>
+</g></svg>

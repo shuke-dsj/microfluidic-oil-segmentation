@@ -1,0 +1,8 @@
+# Local verification environment (Python 3.11); choose a matching PyTorch wheel for your device.
+torch==2.3.1
+torchvision==0.18.1
+numpy==1.24.3
+Pillow==10.2.0
+matplotlib==3.8.0
+PyQt5==5.15.10
+pytest==7.4.0
