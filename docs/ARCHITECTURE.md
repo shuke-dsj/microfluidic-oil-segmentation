@@ -11,17 +11,6 @@
 
 ## 模型结构
 
-```mermaid
-flowchart LR
-  X[RGB 结构图] --> E[ResNet18 编码器]
-  E --> B[1/32 深层语义特征]
-  B --> D[五级转置卷积解码器]
-  E --> A[att4 / att3 / att2]
-  D -->|门控信号 g| A
-  A -->|加权 skip 特征| D
-  X -->|原图跳跃连接| D
-  D --> H[1×1 Conv / 六类 logits]
-```
 <img width="694" height="401" alt="image" src="https://github.com/user-attachments/assets/520c2d0c-f86c-4814-8a30-0a00ca556660" />
 
 编码器通道为 64、64、128、256、512；三个注意力门作用于较深的三条 skip 连接，最浅的特征连接和原图连接直接拼接。门控通过 `ReLU(Wg(g)+Wx(x))`、1×1 卷积、BN 和 Sigmoid 产生单通道空间权重 α，然后计算 `x * α`。它是类别无关的特征门控，不能把 α 当作油概率。
