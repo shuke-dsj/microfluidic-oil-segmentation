@@ -4,7 +4,7 @@
 
 ![Project overview](examples/overview.svg)
 
-[技术路线](docs/ARCHITECTURE.md) · [实验结果](docs/RESULTS.md) · [数据协议](docs/DATA.md) · [求职项目说明](docs/PORTFOLIO.md) · [模型权重](https://github.com/shuke-dsj/microfluidic-oil-segmentation/releases/tag/v1.0.0)
+[技术路线](docs/ARCHITECTURE.md) · [实验结果](docs/RESULTS.md) · [数据协议](docs/DATA.md) · [模型权重](https://github.com/shuke-dsj/microfluidic-oil-segmentation/releases/tag/v1.0.0)
 
 将实验室的剩余油赋存形态分析需求转为一套可操作的图像分析流程：先用颜色规则生成标准化孔隙—油相结构图，再用 Attention ResUNet 做像素级分类，最后输出各类油的面积占比、可视化和分析报告。
 
